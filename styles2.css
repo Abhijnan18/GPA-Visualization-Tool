@@ -1,0 +1,560 @@
+/* Nav bar CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,500;1,600;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(#040d15, #001324);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: #01fe87;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #01fe87;
+    border-radius: 20px;
+}
+
+header ul li a:hover,
+header ul li a.active {
+    background: #01fe87;
+    color: #2b1055;
+}
+
+h2 {
+    color: #01fe87;
+}
+
+/* Upload CSV File graphics */
+.centered-text {
+    display: flex;
+    justify-content: center;
+}
+
+.special-heading-wrapper {
+    position: relative;
+    padding-top: 120px;
+    padding-bottom: 70px;
+}
+
+h2.special-heading {
+    font-size: 9vw;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+h2.special-heading span {
+    display: block;
+}
+
+h2.special-heading::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #01fe87;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #01fe87;
+    overflow: hidden;
+    animation: animate 7s linear infinite;
+}
+
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%, 90% {
+        width: 100%;
+    }
+}
+
+/* css for image */
+/* Global styles (optional) */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the image container */
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Styling for each image */
+.image-container img {
+    max-width: 45%;
+    height: auto;
+    margin: 5px;
+}
+
+/* Styling for the input container */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+/* Styling for the label */
+.input-container label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #01fe87;
+}
+
+/* Styling for the file input */
+.input-container input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4d4d4d;
+    background-color: #333;
+    color: #fff;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Styling for the file input on hover */
+.input-container input[type="file"]:hover {
+    background-color: #444;
+}
+
+/* Styling for the file input on focus */
+.input-container input[type="file"]:focus {
+    box-shadow: 0 0 6px #00eaff;
+}
+
+/* Styling for the file input when selected */
+.input-container input[type="file"]:focus::file-selector-button {
+    background-color: #00eaff;
+    color: #fff;
+}
+
+/* Styling for the Vizualize button */
+.viz_btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the button */
+#visualise-btn {
+    position: relative;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #01fe87;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover state for the button */
+#visualise-btn:hover {
+    background: #47fda8; 
+    transform: translateY(-3px);
+    border: 2px solid black;
+    font-weight: 800;
+    box-shadow: 0 0.4em 1em #01fe87;
+}
+
+/* Ripple effect */
+#visualise-btn span {
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+/* Styling for the spacer */
+.spacer {
+    height: 100px;
+}
+
+/* Optional: Add a fixed position to the taskbar */
+/* Footer styles */
+.footer {
+    background-color: #040d15;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.footer nav li {
+    margin-right: 20px;
+}
+
+.footer nav li:last-child {
+    margin-right: 0;
+}
+
+.footer nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer nav a:hover {
+    color: #01fe87;
+}
+
+.footer p {
+    margin: 0;
+}
+
+
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.input-container {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.input-container label {
+    margin-right: 10px;
+}
+
+/* Genrate btn styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+/* Styling for the button */
+
+
+@keyframes animate2 {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+#chartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.chart {
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the Rank Table */
+#rankTableContainer {
+    margin: 10px;
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+}
+
+td {
+    padding: 8px;
+}
+
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+tr:nth-child(2) td {
+    background-color: #FFD700;
+    color: #ffffff;
+}
+
+tr:nth-child(3) td {
+    background-color: #C0C0C0;
+    color: #ffffff;
+}
+
+tr:nth-child(4) td {
+    background-color: #CD7F32;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 600px) {
+    th,
+    td {
+        padding: 6px;
+        font-size: 0.9em; /* Adjust the font size as needed */
+    }
+
+    tr:nth-child(odd),
+    tr:nth-child(even) {
+        display: block;
+        padding: 8px 0;
+    }
+
+    tr {
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:nth-child(2) td {
+        background-color: #FFD700;
+        color: #ffffff;
+    }
+    tr:nth-child(1) td {
+        background-color: #f9f9f9;
+        color: #000;
+    }
+
+    tr:nth-child(3) td {
+        background-color: #ddd;
+        color: #ffffff;
+    }
+
+    tr:nth-child(4) td {
+        background-color: #CD7F32;
+        color: #ffffff;
+    }
+
+    /* tr:nth-child(2) td:before {
+        content: "🥇 ";
+    }
+
+    tr:nth-child(3) td:before {
+        content: "🥈 ";
+    }
+
+    tr:nth-child(4) td:before {
+        content: "🥉 ";
+    } */
+}
+
+/* Optional: Add a fixed position to the taskbar */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    padding-right: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+#generateBtn,#resetButton {
+    background-color: #01fe87;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
+    font-weight: 500;
+    border: 2px solid black;
+    margin: 20px;
+}
+
+#generateBtn:hover,#resetButton:hover {
+            transform: translateY(-3px);
+            border: 2px solid black;
+            font-weight: 800;
+            box-shadow: 0 0.4em 1em #01fe87;
+            background-color: #47fda8;
+}
+
+
+
+
+
+.chart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart {
+    width: 100%;
+    max-height: 700px;
+    position: relative;
+}
+
+.tooltip {
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    display: none;
+}
+
+#chartContainerSection {
+    display: none;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+.chart-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.chart-item {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-item h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rank-table {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Styling for the neon green button */
+.neon-green-button {
+    background-color: #01fe87;
+    /* Neon green background color */
+    color: #000;
+    /* Text color */
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent; /* Initially, transparent border */
+    font-weight: 500;
+}
+
+
+.neon-green-button:hover {
+    /* background-color:#94efa2; */
+    /* Brighter neon green on hover */
+    transform: translateY(-3px);
+    border: 2px solid black; /* Initially, transparent border */
+    font-weight: 800;
+    box-shadow: 0 0.4em 1em #01fe87;
+}

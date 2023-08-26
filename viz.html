@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student GPA Visualization</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="Chart.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <!-- <h1>Student GPA Visualization</h1> -->
+    <div class="taskbar">
+        <header>
+            <a href="#" class="logo">Visualization</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a href="#" onclick="setActiveAndOpenPage(this, 'home.html')">Home</a></li>
+                <li><a href="#" onclick="setActiveAndOpenPage(this, 'guide.html')">Guide</a></li>
+                <li><a href="#" onclick="setActiveAndOpenPage(this, 'contact.html')">Contact</a></li>
+                <li><a href="#" class="neon-green-button">Visualize</a>
+                </li>
+            </ul>
+        </header>
+    </div>
+
+
+
+    <div>
+        <h2>&nbsp;</h2>
+    </div>
+    <!-- <div>
+        <h2>&nbsp;</h2>
+    </div> -->
+
+
+
+
+    <!-- 
+    <div class="centered-text">
+        <div class="special-heading-wrapper">
+            <h2 class="special-heading" data-text="Visualization..."><span>Visualization...</span></h2>
+        </div>
+    </div> -->
+
+    <!-- <div>
+        <h2>&nbsp;</h2>
+    </div>
+    <div>
+        <h2>&nbsp;</h2>
+    </div>
+    <div>
+        <h2>&nbsp;</h2>
+    </div>
+    <div>
+        <h2>&nbsp;</h2>
+    </div>
+ -->
+
+    <div class="visualization-section" id="visualization-section">
+        <h2>Types of Visualizations</h2>
+        <p>These are the various types of visualizations that you can generate based on the uploaded data <br><span>Scroll down</span>
+            and upload the CSV file, to get the <span>Vizualization</span></p>
+
+        <div class="visualization-boxes">
+            <div class="visualization-box">
+                <h3>GPA Histogram</h3>
+                <p>A histogram displays the distribution of GPA scores, helping you understand the frequency of
+                    different GPA ranges.</p>
+            </div>
+            <div class="visualization-box">
+                <h3>GPA Bar Chart</h3>
+                <p>A bar chart provides a visual comparison of GPA scores for different categories, such as courses or
+                    semesters.</p>
+            </div>
+            <div class="visualization-box">
+                <h3>GPA Pie Chart</h3>
+                <p>A pie chart showcases the proportion of each GPA category in the dataset, aiding in visualizing
+                    percentage composition.</p>
+            </div>
+            <div class="visualization-box">
+                <h3>GPA Doughnut Chart</h3>
+                <p>A doughnut chart is similar to a pie chart but with a hole in the center, offering an alternative
+                    view of the data distribution.</p>
+            </div>
+            <div class="visualization-box">
+                <h3>GPA Scatter Chart</h3>
+                <p>A scatter chart plots individual GPA data points to show relationships or patterns between two
+                    variables.</p>
+            </div>
+            <div class="visualization-box">
+                <h3>Rank Table</h3>
+                <p>A rank table lists the ranked performance of students based on their GPA scores.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="viz_btn-container">
+        <a href="#" id="visualise-btn">Visualize</a>
+    </div>
+
+
+    <div>
+        <h2>&nbsp;</h2>
+    </div>
+
+    <div>
+        <h2>&nbsp;</h2>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="input-container" id="input-container">
+        <label for="csvFileInput">Upload CSV File:</label>
+        <input type="file" id="csvFileInput">
+    </div>
+
+
+    <div>
+        <h2>&nbsp;</h2>
+    </div>
+
+
+    <div class="button-container">
+        <button id="generateBtn">Generate</button>
+        <button id="resetButton">Reset</button>
+    </div>
+
+
+
+
+
+
+    <!-- Add a new div for the chart container section -->
+    <div id="chartContainerSection" style="display: none;">
+        <div id="chartContainer" class="chart-wrapper">
+            <div class="chart-item">
+                <h2>GPA Histogram</h2>
+                <canvas id="histogramContainer" class="chart"></canvas>
+            </div>
+            <div class="chart-item">
+                <h2>GPA Bar Chart</h2>
+                <canvas id="barChartContainer" class="chart"></canvas>
+            </div>
+            <div class="chart-item">
+                <h2>GPA Pie Chart</h2>
+                <canvas id="pieChartContainer" class="chart"></canvas>
+            </div>
+            <div class="chart-item">
+                <h2>GPA Doughnut Chart</h2>
+                <canvas id="doughnutChartContainer" class="chart"></canvas>
+            </div>
+            <div class="chart-item">
+                <h2>GPA Scatter Chart</h2>
+                <canvas id="scatterChartContainer" class="chart"></canvas>
+            </div>
+        </div>
+        <div class="rank-table">
+            <h2>Rank Table</h2>
+            <div id="rankTableContainer"></div>
+        </div>
+        <div class="button-container">
+        </div>
+    </div>
+
+    <div class="footer">
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2023 Student GPA Visualization. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <style>
+        span {
+            color: #01fe87;
+            font-size: 1em;
+            font-weight: 800;
+        }
+
+        .chartContainerSection {
+            background: transparent;
+        }
+
+        .viz_btn-container {
+            animation: slideUp 1s ease-out;
+        }
+
+
+
+
+        /* Styling for the visualization section */
+        .visualization-section {
+            background-color: transparent;
+            /* background-color: #fff; */
+            padding: 7.5em;
+            border-radius: 0.5em;
+            box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+            margin-top: 1.25em;
+        }
+
+        .visualization-section h2 {
+            font-size: 1.5em;
+            color: #01fe87;
+            margin-bottom: 0.625em;
+            animation: slideUp 1s ease-out;
+
+        }
+
+        .visualization-section p {
+            font-size: 1.2em;
+            color: #d3f7e6;
+            margin-bottom: 1.25em;
+            animation: slideUp 1s ease-out;
+
+
+        }
+
+        .visualization-boxes {
+            display: grid;
+            /* flex-direction: column; */
+            /* Stacking boxes vertically */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25em;
+        }
+
+        .visualization-box {
+            background-color: #0d273e;
+            padding: 1.25em;
+            border-radius: 0.5em;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                /* Start from bottom of the screen */
+                opacity: 0;
+                /* Initially hidden */
+            }
+
+            to {
+                transform: translateY(0);
+                /* Slide up to original position */
+                opacity: 1;
+                /* Fully visible */
+            }
+        }
+
+        .visualization-box h3 {
+            font-size: 1em;
+            color: #01fe87;
+            margin-bottom: 0.625em;
+        }
+
+        .visualization-box p {
+            font-size: 1em;
+            color: #d3f7e6;
+        }
+
+        .visualization-box:hover {
+            transform: translateY(-0.3125em);
+            transition: transform 0.3s ease;
+            box-shadow: 0 0.4em 1em #01fe87;
+            /* Solid green shadow */
+        }
+
+        @media screen and (max-width: 768px) {
+            
+            .footer {
+                padding: 10px 0;
+            }
+
+            .footer nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .footer nav li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
+
+
+
+   
+
+
+    <script>
+        function setActiveAndOpenPage(linkElement, pageUrl) {
+            // Remove "active" class from all links
+            const links = document.querySelectorAll('.taskbar ul li a');
+            links.forEach(link => link.classList.remove('active'));
+
+            // Add "active" class to the clicked link
+            linkElement.classList.add('active');
+
+            // Open the specified page in the same tab
+            window.location.href = pageUrl;
+        }
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <title>Contact</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,500;1,600;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(#040d15, #001324);
+            margin: 0;
+        }
+
+        /* Styling for the neon green button */
+        .neon-green-button {
+            background-color: #01fe87;
+            /* Neon green background color */
+            color: #000;
+            /* Text color */
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+            border: 2px solid transparent;
+            /* Initially, transparent border */
+            font-weight: 500;
+            border: 2px solid black;
+
+        }
+
+
+        .neon-green-button:hover {
+            /* background-color:#94efa2; */
+            /* Brighter neon green on hover */
+            transform: translateY(-3px);
+            border: 2px solid black;
+            /* Initially, transparent border */
+            font-weight: 800;
+            box-shadow: 0 0.4em 1em #01fe87;
+        }
+
+        .card {
+            justify-content: center;
+        }
+
+
+
+
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            color: #01fe87;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header ul li {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            padding: 6px 15px;
+            color: #01fe87;
+            border-radius: 20px;
+        }
+
+        header ul li a:hover,
+        header ul li a.active {
+            background: #01fe87;
+            color: #2b1055;
+        }
+
+        header ul li a#active {
+            background: #01fe87;
+            color: #2b1055;
+        }
+
+        h2 {
+            color: #01fe87;
+        }
+
+        /* Footer styles */
+
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            background-color: #040d15;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .footer footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .footer nav li {
+            margin-right: 20px;
+        }
+
+        .footer nav li:last-child {
+            margin-right: 0;
+        }
+
+        .footer nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer nav a:hover {
+            color: #01fe87;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+        .details-list{
+            display: none;
+        }
+
+
+        @media screen and (max-width: 768px) {
+
+           
+            .card {
+                display: none;
+            }
+
+            .details-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .details-list li {
+                width: 300px;
+                /* Set a reasonable width for each list item */
+                margin: 20px;
+                padding: 20px;
+                background-color: #051d32b2;
+                border-radius: 10px;
+                box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.588);
+                text-align: center;
+            }
+
+            .details-list h2 {
+                color: #01fe87;
+                margin-bottom: 10px;
+            }
+
+            .details-list p {
+                color: #fff;
+                margin: 8px 0;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="taskbar">
+        <header>
+            <a href="#" class="logo">Contact</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a href="#" onclick="setActiveAndOpenPage(this, 'home.html')">Home</a></li>
+                <li><a href="#" onclick="setActiveAndOpenPage(this, 'guide.html')">Guide</a></li>
+                <li><a href="#" class="active">Contact</a></li>
+                <li><a href="viz.html" class="neon-green-button"
+                        onclick="setActiveAndOpenPage(this, 'viz.html')">Visualize</a>
+                </li>
+            </ul>
+        </header>
+    </div>
+
+    <div class="content">
+        <ul class="details-list">
+            <li>
+                <h2>Front-End</h2>
+                <p>Name: Abhijnan S</p>
+                <p>USN: 1JS21CS004</p>
+            </li>
+            <li>
+                <h2>Optimization</h2>
+                <p>Name: Alok Kumar Maurya</p>
+                <p>USN: 1JS21CS019</p>
+            </li>
+            <li>
+                <h2>Back-End</h2>
+                <p>Name: Anand S P</p>
+                <p>USN: 1JS21CS024</p>
+            </li>
+        </ul>
+        <!-- Your main content goes here -->
+        <div class="card" style="justify-content: center;">
+            <div class="card-inner">
+                <div class="card-front">
+                    <!-- Front of the card with content -->
+                    <h1>Front-End</h1>
+                    <p>Name: &nbsp;Abhijnan S</p>
+                    <p>USN: &nbsp;1JS21CS004</p>
+                    <h1>Optimization</h1>
+                    <p>Name: &nbsp;Alok Kumar Maurya</p>
+                    <p>USN: &nbsp;1JS21CS019</p>
+                    <h1>Back-End</h1>
+                    <p>Name: &nbsp;Anand S P</p>
+                    <p>USN: &nbsp;1JS21CS024</p>
+
+                </div>
+                <div class="card-back">
+                    <h1>GPA Visualization</h1>
+                    <h2>Web Programming Project</h2>
+                    <h3>HTML,CSS and Javascript</h3>
+                    <!-- Back of the card (optional) -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,500;1,600;1,900&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            /* Add the slide-up animation */
+
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            perspective: 2000px;
+            animation: fadeIn 1s ease-out forwards;
+            /* Add fade-in animation */
+            animation: slideUp 1s ease-out;
+
+
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .card-inner {
+            width: 500px;
+            height: 700px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.588);
+            background-color: #051d32b2;
+            /* Light gray background color */
+            font-family: Arial, sans-serif;
+            text-align: justify;
+            color: #333;
+            /* Dark text color */
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            color: #01fe87;
+        }
+
+
+        h3 {
+            padding-top: 20px;
+            margin: 0 0 20px;
+            font-size: 12px;
+            color: #01fe87;
+        }
+
+        p {
+            color: #fff;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+
+    <div class="footer">
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2023 Student GPA Visualization. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const contactLink = document.querySelector('.contact-link');
+
+        contactLink.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevents the default behavior of the link
+
+            // Remove 'active' class from all links
+            const allLinks = document.querySelectorAll('ul li a');
+            allLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked link
+            contactLink.classList.add('active');
+
+            // Open the link in a new tab
+            window.open(contactLink.href, '_blank');
+
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            const hamburger = document.querySelector(".hamburger");
+            menu.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        }
+
+        function setActiveAndOpenPage(linkElement, pageUrl) {
+            // Remove "active" class from all links
+            const links = document.querySelectorAll('.taskbar ul li a');
+            links.forEach(link => link.classList.remove('active'));
+
+            // Add "active" class to the clicked link
+            linkElement.classList.add('active');
+
+            // Open the specified page in the same tab
+            window.location.href = pageUrl;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <title>Background Animation</title>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <div class="content">
+    <div class="preloader">
+      <div class="counter" id="counter">
+        <span class="number">0</span>
+        <span class="percentage">%</span>
+      </div>
+      <div class="loader">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      /* Center horizontally */
+      align-items: center;
+      /* Center vertically */
+      min-height: 100vh;
+      background: linear-gradient(#040d15, #001324);
+    }
+
+    .preloader {
+      text-align: center;
+    }
+
+
+    /* Add this to your existing CSS */
+    @keyframes scaleIn {
+      0% {
+        opacity: 1;
+        transform: scale(0);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .counter {
+      font-size: 30em;
+      font-weight: bold;
+      color: #01fe87;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      animation: scaleIn 2s ease-in-out forwards;
+      /* Apply scale-in animation */
+    }
+
+
+
+
+
+
+    .number {
+      margin-right: 5px;
+    }
+
+    .percentage {
+      font-size: 50%;
+      /* Half the size of the numbers */
+      vertical-align: baseline;
+      /* Align percentage to baseline */
+    }
+
+    .loader {
+      display: none;
+    }
+
+    .progress-bar {
+      display: none;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 50px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    /* Your existing CSS */
+
+    /* Mobile-first styles */
+    @media (max-width: 767px) {
+      body {
+        align-items: flex-start;
+        /* Adjust alignment for smaller screens */
+        min-height: 100vh;
+        background: black;
+      }
+
+      .content {
+        padding: 20em;
+        padding-right: 15em;
+        /* Reduce padding for smaller screens */
+      }
+
+      /* Adjust particle container for smaller screens */
+      #particles-js {
+       display: none;
+        /* Adjust height for smaller screens */
+      }
+
+      .counter {
+        font-size: 8em;
+        /* Adjust font size for smaller screens */
+        align-items: center;
+      }
+    }
+
+    /* Tablet and larger screen styles */
+    @media (min-width: 768px) {
+      .content {
+        padding: 20em;
+        /* Restore padding for larger screens */
+      }
+/* 
+      #particles-js {
+        display: none;
+      } */
+
+      .counter {
+        font-size: 18em;
+        /* Adjust font size for larger screens */
+      }
+    }
+
+
+    /* Additional styles for your content */
+  </style>
+
+
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 50, // Adjust the number of particles
+          density: {
+            enable: true,
+            value_area: 800 // Adjust the density of particles
+          }
+        },
+        color: {
+          value: '#01fe87' // Adjust the color of particles
+        },
+        shape: {
+          type: 'circle', // Adjust the shape of particles (circle, edge, triangle, etc.)
+          stroke: {
+            width: 0,
+            color: '#000000'
+          },
+          polygon: {
+            nb_sides: 5
+          }
+        },
+
+        opacity: {
+          value: 0.5, // Adjust the opacity of particles
+          random: true,
+          anim: {
+            enable: true,
+            speed: 0.2,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 4, // Adjust the size of particles
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.1,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: false
+        },
+        move: {
+          enable: true,
+          speed: 0.2, // Adjust the speed of particle movement
+          direction: 'none',
+          random: true,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'repulse' // Adjust the interaction mode (repulse, bubble, etc.)
+          },
+          onclick: {
+            enable: true,
+            mode: 'push' // Adjust the interaction mode (push, remove, etc.)
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          bubble: {
+            distance: 250,
+            size: 0,
+            duration: 2,
+            opacity: 0,
+            speed: 3
+          },
+          repulse: {
+            distance: 100,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          },
+          remove: {
+            particles_nb: 2
+          }
+        }
+      },
+      retina_detect: true
+    });
+
+
+    const counter = document.getElementById("counter");
+    const progressBar = document.getElementById("progressBar");
+    let progress = 0;
+
+    function updateProgress() {
+      progress++;
+      progressBar.style.width = `${progress}%`;
+      counter.querySelector(".number").textContent = progress;
+      if (progress === 100) {
+        clearInterval(progressInterval);
+        redirectToHomePage();
+      }
+    }
+
+    const progressInterval = setInterval(updateProgress, 40);
+
+    function redirectToHomePage() {
+
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 1000); 
+    }
+  </script>
+
+</body>
+
+</html>
