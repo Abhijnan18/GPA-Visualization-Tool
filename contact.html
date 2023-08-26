@@ -161,14 +161,36 @@
         .footer p {
             margin: 0;
         }
-        .details-list{
+
+        .details-list {
             display: none;
         }
 
 
         @media screen and (max-width: 768px) {
 
-           
+            body {
+                min-height: 100vh;
+            }
+
+            .footer {
+                padding: 0.0625em 0;
+                /* 1px = 0.0625em */
+            }
+
+            .footer nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 0.625em;
+                /* 10px = 0.625em */
+            }
+
+            .footer nav li {
+                margin-right: 0;
+                margin-bottom: 0.625em;
+                /* 10px = 0.625em */
+            }
+
             .card {
                 display: none;
             }
@@ -176,35 +198,48 @@
             .details-list {
                 list-style: none;
                 padding: 0;
-                margin: 0;
+                margin: 1.25em;
+                /* 20px = 1.25em */
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
             .details-list li {
-                width: 300px;
-                /* Set a reasonable width for each list item */
-                margin: 20px;
-                padding: 20px;
+                width: 16em;
+                margin: 1.25em;
+                padding: 1.25em;
                 background-color: #051d32b2;
-                border-radius: 10px;
+                border-radius: 0.625em;
                 box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.588);
                 text-align: center;
+                font-size: 0.8em;
             }
-
-            .details-list h2 {
-                color: #01fe87;
-                margin-bottom: 10px;
-            }
-
-            .details-list p {
-                color: #fff;
-                margin: 8px 0;
-            }
-
-
         }
+
+        p {
+            font-size: 0.9em;
+        }
+
+        .details-list h2 {
+            color: #01fe87;
+            margin-bottom: 0.625em;
+            /* 10px = 0.625em */
+        }
+
+        .details-list p {
+            color: #fff;
+            margin: 0.5em 0;
+            /* 8px = 0.5em */
+        }
+
+        .foot {
+            display: none;
+        }
+
+
+
+        
     </style>
 </head>
 
@@ -246,6 +281,7 @@
                 <p>USN: 1JS21CS024</p>
             </li>
         </ul>
+
         <!-- Your main content goes here -->
         <div class="card" style="justify-content: center;">
             <div class="card-inner">
@@ -368,13 +404,13 @@
         p {
             color: #fff;
             margin: 10px 0;
-            font-size: 18px;
+            /* font-size: 18px; */
         }
     </style>
 
     <div class="footer">
         <footer>
-            <nav>
+            <nav class="foot">
                 <ul>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Privacy Policy</a></li>
